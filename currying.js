@@ -5,5 +5,8 @@ var User =
       food => {
         logger(`${name} is an ${descriptor} person, he likes to eat ${food}.`);
       };
-var billy = User('Billy');
-billy('average')('cheese');
+var billy = User('Billy')('average')('cheese');
+
+
+//result:
+//  Billy is an average person, he likes to eat cheese.
