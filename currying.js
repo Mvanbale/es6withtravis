@@ -13,17 +13,17 @@ var ingredients = [{ingredient: 'kaas', amount: 12, unit: 'gram'},
 
 const filter =
   input =>
-    ingredient =>
+    (ingredient = null) =>
       amountLower =>
         amountUpper =>
           unit => {
-            if (ingredient !== null) input = input.filter((entry) => entry.ingredient.toLowerCase() === ingredient.toLowerCase());
-            if (amountLower !== null) input = input.filter((entry) => entry.amount >= amountLower);
-            if (amountUpper !== null) input = input.filter((entry) => entry.amount <= amountUpper);
-            if (unit !== null) input = input.filter((entry) => entry.unit.toLowerCase() === unit.toLowerCase());
+            if (ingredient !== null) input = input.filter(entry => entry.ingredient.toLowerCase() === ingredient.toLowerCase());
+            if (amountLower !== null) input = input.filter(entry => entry.amount >= amountLower);
+            if (amountUpper !== null) input = input.filter(entry => entry.amount <= amountUpper);
+            if (unit !== null) input = input.filter(entry => entry.unit.toLowerCase() === unit.toLowerCase());
             return input;
           };
-const myFilteredIngredients = filter(ingredients)(null)(0)(12)('gram');
+const myFilteredIngredients = filter(ingredients)('hAm')(0)(null)('gram');
 
 console.log(myFilteredIngredients);
 
